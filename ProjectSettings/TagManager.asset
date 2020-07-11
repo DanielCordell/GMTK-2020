@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Collidable
   - GameSettings
-  - Destructable
   layers:
   - Default
   - TransparentFX
