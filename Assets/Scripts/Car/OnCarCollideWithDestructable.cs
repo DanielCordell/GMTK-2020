@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarCollideWithCollidable : MonoBehaviour
+public class OnCarCollideWithDestructable : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Collidable"))
+        if (other.gameObject.CompareTag("Destructable"))
         {
             Destroy(other.gameObject);
         }
