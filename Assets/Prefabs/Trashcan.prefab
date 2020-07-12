@@ -717,8 +717,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14ea901e44f277b4db673b36cf4036f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newObject: {fileID: 9028856509926566648, guid: cd74402453a99284ab62694b4ade398c,
+  objectSwappedToOnCollide: {fileID: 9028856509926566648, guid: cd74402453a99284ab62694b4ade398c,
     type: 3}
+  keyRefilAmountOnHit: 80
 --- !u!65 &8153267161667374688
 BoxCollider:
   m_ObjectHideFlags: 0

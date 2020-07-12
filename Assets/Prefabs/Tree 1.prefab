@@ -137,5 +137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14ea901e44f277b4db673b36cf4036f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newObject: {fileID: 3091714454384962976, guid: 28ac24c025002d94ebef3f70424cd03e,
+  objectSwappedToOnCollide: {fileID: 3091714454384962976, guid: 28ac24c025002d94ebef3f70424cd03e,
     type: 3}
+  keyRefilAmountOnHit: 50

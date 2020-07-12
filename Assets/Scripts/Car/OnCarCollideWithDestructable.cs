@@ -9,17 +9,25 @@ public class OnCarCollideWithDestructable : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Collidable"))
         {
-            ObjectSwapOnCollide objectSwap = other.gameObject.GetComponent<ObjectSwapOnCollide>();
-            if (objectSwap != null && objectSwap.newObject != null)
+            CollidableObjectMetadata objectMetadata = other.gameObject.GetComponent<CollidableObjectMetadata>();
+            if (objectMetadata != null)
             {
-                GameObject newObj = Instantiate(objectSwap.newObject, other.transform.position, other.transform.rotation);
-                Rigidbody oldRB = other.GetComponent<Rigidbody>();
-                if (oldRB != null)
-                    foreach (Rigidbody rb in newObj.GetComponentsInChildren<Rigidbody>())
-                    {
 
-                        rb.AddExplosionForce(2000, transform.position + Vector3.left, 10);
-                    }
+                if (objectMetadata.objectSwappedToOnCollide != null)
+                {
+                    GameObject newObj = Instantiate(objectMetadata.objectSwappedToOnCollide, other.transform.position, other.transform.rotation);
+                    Rigidbody oldRB = other.GetComponent<Rigidbody>();
+                    if (oldRB != null)
+                        foreach (Rigidbody rb in newObj.GetComponentsInChildren<Rigidbody>())
+                        {
+                            rb.AddExplosionForce(2000, transform.position + Vector3.left, 10);
+                        }
+                }
+                if (objectMetadata.keyRefilAmountOnHit != 0)
+                {
+                    ControlController cc = FindObjectOfType<ControlController>();
+                    if (cc != null) cc.RefillKey(objectMetadata.keyRefilAmountOnHit);
+                }
             }
             Destroy(other.gameObject);
         }
