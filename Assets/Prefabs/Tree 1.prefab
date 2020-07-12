@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2749991006293144893}
   - component: {fileID: 2749991006293144883}
   - component: {fileID: 2749991006293144894}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tree 1
   m_TagString: Collidable
   m_Icon: {fileID: 0}
